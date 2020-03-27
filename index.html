@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator Metro</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="w3.css">
+	<link rel="icon" href="metro.png">
+	
+	
+	
+	<style>
+		h4, label, h5, h6 {
+			font-weight: bold;
+			color: white; }
+			div.scrollhorizontal {
+				overflow: auto;
+				white-space: nowrap; }
+			</style>
+		</head>
+		<body style="background-image: linear-gradient(red, black)">
+			<div class="w3-container w3-red w3-top" style="background-image: linear-gradient(red, black)">
+				<h3 class="w3-center"><img style="width: 100px;" src="metro2.jpeg"><span><b> LUBUK PAKAM</b></span></h3>
+			</div>
+			<br><br>
+			<div class="w3-container" style="margin-top: 12px;">
+				<h5 class="w3-center">Menghitung Angsuran Barang Tarikan (SPBT)</h5>
+			</div>
+			
+			<div class="w3-center w3-container" id="lagu">
+
+				<div class="scrollhorizontal w3bar w3-border w3-bottombar w3-topbar" style="width: 100%;" id="bar">
+					<button title="Engkaulah Raja Damai" class="w3-bar-item w3-small w3-button testbtn w3-hover-dark-grey" onclick="openCity(event,'harga-konsumen')"><h6>Harga Konsumen</h6></button>
+
+					<button title="kosong" class="w3-bar-item w3-small w3-button testbtn w3-hover-dark-grey" onclick="openCity(event,'harga-karyawan')"><h6>Harga Karyawan</h6></button>			
+				</div>
+
+				<div id="harga-konsumen" class="w3-container w3-center city w3-animate-opacity">
+					<form id="form">
+
+						<p>
+							<label>HPP Barang Baru</label>
+							<input id="hpp-barang-baru" class="w3-input w3-center" type="text" autofocus="autofocus">
+						</p>
+
+						<p>
+							<label>Harga Jual Kredit</label>
+							<input id="harga-jual-kredit" class="w3-input w3-center" type="text">
+						</p>
+
+						<p>
+							<label>Sudah Bayar</label>
+							<input id="sudah-bayar" class="w3-input w3-center" type="text">
+						</p>
+
+						<button class="w3-button w3-orange w3-center w3-round-large" type="button" onClick="hitung()"><b>Hitung</b></button>
+
+						<p>
+							<label>Sisa Angsuran</label>
+							<input id="sisa-angsuran" class="w3-input w3-center" type="text" readonly>
+						</p>
+
+						<p>
+							<label>HPP Tarikan</label>
+							<input id="hpp-tarikan" class="w3-input w3-center" type="text">
+						</p>
+
+						<button class="w3-button w3-orange w3-center w3-round-large" type="button" onClick="hitung2()"><b>Hitung</b></button>
+
+						<p>
+							
+							<input id="hc-tarikan" class="w3-input w3-center" type="hidden" readonly>
+						</p>
+					</form>
+
+					<div class="w3-container w3-green">
+						<h4 class="w3-center">Hasil</h4>
+					</div>
+
+					<form>
+
+						<p>
+							<label>Angsuran 12</label>
+							<input id="angsuran1" class="w3-input w3-center" type="number" readonly>
+						</p>
+
+						<p>
+							<label>Angsuran 9</label>
+							<input id="angsuran2" class="w3-input w3-center" type="number" readonly>
+						</p>
+
+						<p>
+							<label>Angsuran 6</label>
+							<input id="angsuran3" class="w3-input w3-center" type="number" readonly>
+						</p>	
+
+					</form>
+				</div>
+
+
+				<div id="harga-karyawan" class="w3-container w3-center city w3-animate-opacity">
+					<form id="form">
+
+						<p>
+							<label>HPP Barang Baru</label>
+							<input id="hpp-barang-baru2" class="w3-input w3-center" type="text" autofocus="autofocus">
+						</p>
+
+						<p>
+							<label>Harga Jual Kredit</label>
+							<input id="harga-jual-kredit2" class="w3-input w3-center" type="text">
+						</p>
+
+						<p>
+							<label>Sudah Bayar</label>
+							<input id="sudah-bayar2" class="w3-input w3-center" type="text">
+						</p>
+
+						<button class="w3-button w3-orange w3-center" type="button" onClick="hitung3()"><b>Hitung</b></button>
+
+						<p>
+							<label>Sisa Angsuran</label>
+							<input id="sisa-angsuran2" class="w3-input w3-center" type="text" readonly>
+						</p>
+
+						<p>
+							<label>HPP Tarikan</label>
+							<input id="hpp-tarikan2" class="w3-input w3-center" type="text">
+						</p>
+
+						<button class="w3-button w3-orange w3-center" type="button" onClick="hitung4()"><b>Hitung</b></button>
+
+						<p>
+							
+							<input id="hc-tarikan2" class="w3-input w3-center" type="hidden" readonly>
+						</p>
+					</form>
+
+					<div class="w3-container w3-green">
+						<h4 class="w3-center">Hasil</h4>
+					</div>
+
+					<form>
+
+						<p>
+							<label>Angsuran 12</label>
+							<input id="angsuran12" class="w3-input w3-center" type="number" readonly>
+						</p>
+
+						<p>
+							<label>Angsuran 9</label>
+							<input id="angsuran22" class="w3-input w3-center" type="number" readonly>
+						</p>
+
+						<p>
+							<label>Angsuran 6</label>
+							<input id="angsuran32" class="w3-input w3-center" type="number" readonly>
+						</p>	
+
+					</form>
+				</div>
+
+
+
+
+			</div>
+			<div class="w3-container w3-red" style="background-image: linear-gradient(red, black)">
+				<h3 class="w3-center"><img style="width: 100px;" src="metro2.jpeg"><span><b> LUBUK PAKAM</b></span><span class="w3-right w3-small">rajawin<br> 2020</span></h3>
+			</div>
+
+
+
+
+			<script>
+				function hitung()
+				{
+
+					num1 = document.getElementById("harga-jual-kredit").value;
+					num2 = document.getElementById("sudah-bayar").value;
+					document.getElementById("sisa-angsuran").value = num1 - num2;
+
+					num3 = document.getElementById("sisa-angsuran").value;
+					num4 = document.getElementById("hpp-barang-baru").value;
+					var hasil = num3 / num1 * num4;
+					document.getElementById("hpp-tarikan").value = hasil.toFixed(0);
+
+					num5 = document.getElementById("hpp-tarikan").value;
+					var x = 0.35;
+					var y = num5;
+					var result = parseFloat(x) * parseFloat(y) + parseFloat(y)
+					document.getElementById("hc-tarikan").value = result.toFixed(0);
+
+					num6 = document.getElementById("hc-tarikan").value;
+					var a = 0.36;
+					var z = num6;
+					var ang1 = (parseFloat(z) * parseFloat(a) + parseFloat(z)) / 12;
+					document.getElementById("angsuran1").value = ang1.toFixed(0);
+
+					var b = 0.27;
+					var ang2 = (parseFloat(z) * parseFloat(b) + parseFloat(z)) / 9;
+					document.getElementById("angsuran2").value = ang2.toFixed(0);
+
+					var c = 0.18;
+					var ang3 = (parseFloat(z) * parseFloat(c) + parseFloat(z)) / 6;
+					document.getElementById("angsuran3").value = ang3.toFixed(0);  	
+				}
+
+
+			</script>
+
+
+
+			<script>
+				function hitung2()
+				{
+
+					num5 = document.getElementById("hpp-tarikan").value;
+					var x = 0.35;
+					var y = num5;
+					var result = parseFloat(x) * parseFloat(y) + parseFloat(y)
+					document.getElementById("hc-tarikan").value = result.toFixed(0);
+
+					num6 = document.getElementById("hc-tarikan").value;
+					var a = 0.36;
+					var z = num6;
+					var ang1 = (parseFloat(z) * parseFloat(a) + parseFloat(z)) / 12;
+					document.getElementById("angsuran1").value = ang1.toFixed(0);
+
+					var b = 0.27;
+					var ang2 = (parseFloat(z) * parseFloat(b) + parseFloat(z)) / 9;
+					document.getElementById("angsuran2").value = ang2.toFixed(0);
+
+					var c = 0.18;
+					var ang3 = (parseFloat(z) * parseFloat(c) + parseFloat(z)) / 6;
+					document.getElementById("angsuran3").value = ang3.toFixed(0); 
+
+				}
+			</script>
+			<script>
+				function hitung3()
+				{
+
+					num1 = document.getElementById("harga-jual-kredit2").value;
+					num2 = document.getElementById("sudah-bayar2").value;
+					document.getElementById("sisa-angsuran2").value = num1 - num2;
+
+					num3 = document.getElementById("sisa-angsuran2").value;
+					num4 = document.getElementById("hpp-barang-baru2").value;
+					var hasil = num3 / num1 * num4;
+					document.getElementById("hpp-tarikan2").value = hasil.toFixed(0);
+
+					num5 = document.getElementById("hpp-tarikan2").value;
+					var x = 0.35;
+					var y = num5;
+					var result = parseFloat(x) * parseFloat(y) + parseFloat(y)
+					document.getElementById("hc-tarikan2").value = result.toFixed(0);
+
+					num6 = document.getElementById("hc-tarikan2").value;
+					var a = 0.24;
+					var z = num6;
+					var ang1 = (parseFloat(z) * parseFloat(a) + parseFloat(z)) / 12;
+					document.getElementById("angsuran12").value = ang1.toFixed(0);
+
+					var b = 0.18;
+					var ang2 = (parseFloat(z) * parseFloat(b) + parseFloat(z)) / 9;
+					document.getElementById("angsuran22").value = ang2.toFixed(0);
+
+					var c = 0.12;
+					var ang3 = (parseFloat(z) * parseFloat(c) + parseFloat(z)) / 6;
+					document.getElementById("angsuran32").value = ang3.toFixed(0);  	
+				}
+			</script>
+
+			<script>
+				function hitung4()
+				{
+
+					num5 = document.getElementById("hpp-tarikan2").value;
+					var x = 0.35;
+					var y = num5;
+					var result = parseFloat(x) * parseFloat(y) + parseFloat(y)
+					document.getElementById("hc-tarikan2").value = result.toFixed(0);
+
+					num6 = document.getElementById("hc-tarikan2").value;
+					var a = 0.24;
+					var z = num6;
+					var ang1 = (parseFloat(z) * parseFloat(a) + parseFloat(z)) / 12;
+					document.getElementById("angsuran12").value = ang1.toFixed(0);
+
+					var b = 0.18;
+					var ang2 = (parseFloat(z) * parseFloat(b) + parseFloat(z)) / 9;
+					document.getElementById("angsuran22").value = ang2.toFixed(0);
+
+					var c = 0.12;
+					var ang3 = (parseFloat(z) * parseFloat(c) + parseFloat(z)) / 6;
+					document.getElementById("angsuran32").value = ang3.toFixed(0); 
+
+				}
+			</script>
+
+			<script>
+				function openCity(evt, cityName) {
+					var i;
+					var x = document.getElementsByClassName("city");
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";
+					}
+					var activebtn = document.getElementsByClassName("testbtn");
+					for (i = 0; i < x.length; i++) {
+						activebtn[i].className = activebtn[i].className.replace(" w3-black", "");
+					}
+					document.getElementById(cityName).style.display = "block";
+					evt.currentTarget.className += " w3-black";
+				}
+				var mybtn = document.getElementsByClassName("testbtn")[0];
+				mybtn.click();
+			</script>
+
+
+		</body>
+		</html>
